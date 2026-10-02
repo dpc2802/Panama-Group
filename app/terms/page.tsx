@@ -43,7 +43,7 @@ export default function TermsOfService() {
             </p>
             <p>
               <strong>Email:</strong> info@panamagroupgc.com<br />
-              <strong>Phone:</strong> (201) 598-3976<br />
+              <strong>Phone:</strong> +1 (201) 598-3976<br />
               <strong>Address:</strong> 123 Construction Blvd, City, State 12345
             </p>
           </div>
