@@ -51,10 +51,9 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          className="text-lg md:text-2xl text-gray-200 mb-12 max-w-2xl mx-auto font-light font-sans tracking-tight"
-          style={{ fontOpticalSizing: "auto" }}
+          className="text-lg md:text-xl text-gray-200 mb-12 max-w-2xl mx-auto font-bold uppercase tracking-widest font-heading drop-shadow-md"
         >
-          One Company for All Your Property Needs
+          FROM REPAIRS TO RENOVATIONS, WE HANDLE IT ALL
         </motion.p>
         
         {/* Botón */}

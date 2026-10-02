@@ -27,7 +27,7 @@ ${message}`;
     
     // PENDIENTE: Reemplazar con el número de WhatsApp del cliente cuando te lo pasen
     // Formato internacional sin símbolos, ej: "13239086781"
-    const whatsappNumber = "1234567890"; 
+    const whatsappNumber = "12015983976"; 
     
     window.open(`https://wa.me/${whatsappNumber}?text=${encodedText}`, '_blank');
   };
@@ -59,8 +59,8 @@ ${message}`;
                 </div>
                 <div>
                   <h4 className="font-heading font-bold text-xl uppercase mb-1">Call Us</h4>
-                  <a href="tel:+1234567890" className="text-gray-300 hover:text-white transition-colors text-lg">
-                    (555) 123-4567
+                  <a href="tel:+12015983976" className="text-gray-300 hover:text-white transition-colors text-lg">
+                    (201) 598-3976
                   </a>
                 </div>
               </div>

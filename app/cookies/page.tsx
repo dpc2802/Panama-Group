@@ -38,7 +38,7 @@ export default function CookiePolicy() {
             </p>
             <p>
               <strong>Email:</strong> info@panamagroupgc.com<br />
-              <strong>Phone:</strong> (555) 123-4567<br />
+              <strong>Phone:</strong> (201) 598-3976<br />
             </p>
           </div>
         </div>

@@ -37,7 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "name": "Panama Group GC",
     "image": "https://panamagroupgc.com/images/logo-white.png",
     "url": "https://panamagroupgc.com",
-    "telephone": "+1234567890",
+    "telephone": "+12015983976",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "New York",
