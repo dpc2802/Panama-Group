@@ -15,8 +15,7 @@ export function Hero() {
         poster="/images/gallery/project-1-cover.jpg"
         className="absolute inset-0 w-full h-full object-cover z-0 scale-105"
       >
-        {/* PLACEHOLDER: Reemplazar con el video real */}
-        <source src="/hero-video.mp4" type="video/mp4" />
+        <source src="/hero-video.mov" type="video/mp4" />
       </video>
       
       {/* Cinematic Vignette Overlay instead of basic black */}
