@@ -1,45 +1,99 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "motion/react";
 
 export function Hero() {
   return (
-    <section id="hero" className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
-      {/* Video Background (Placeholder) */}
-      <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover z-0 bg-neutral-800">
+    <section id="hero" className="relative h-[100dvh] w-full flex flex-col items-center justify-center overflow-hidden bg-neutral-900">
+      {/* Video Background Optimized */}
+      <video 
+        autoPlay 
+        loop 
+        muted 
+        playsInline
+        poster="/images/gallery/project-1-cover.jpg"
+        className="absolute inset-0 w-full h-full object-cover z-0 scale-105"
+      >
         {/* PLACEHOLDER: Reemplazar con el video real */}
         <source src="/hero-video.mp4" type="video/mp4" />
       </video>
       
-      {/* Overlay oscuro para legibilidad */}
-      <div className="absolute inset-0 bg-black/60 z-10"></div>
+      {/* Cinematic Vignette Overlay instead of basic black */}
+      <div 
+        className="absolute inset-0 z-10 pointer-events-none" 
+        style={{ 
+          background: 'radial-gradient(circle at center, transparent 0%, rgba(15, 23, 42, 0.4) 100%), linear-gradient(to bottom, rgba(15, 23, 42, 0.2) 0%, transparent 40%, rgba(15, 23, 42, 0.95) 100%)' 
+        }}
+      />
 
-      {/* Contenido Central */}
-      <div className="relative z-20 flex flex-col items-center text-center px-4">
-        {/* Logo Grande en el Centro */}
-        <div className="mb-6 relative w-[280px] h-[100px] md:w-[500px] md:h-[180px]">
+      {/* Contenido Central (Staggered Fade Up) */}
+      <div className="relative z-20 flex flex-col items-center text-center px-4 w-full">
+        
+        {/* Logo */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }} // Apple-like custom ease
+          className="mb-8 relative w-[280px] h-[100px] md:w-[500px] md:h-[180px]"
+        >
           <Image 
             src="/images/logo-white.png" 
             alt="Panama Group GC" 
             fill
+            sizes="(max-width: 768px) 280px, 500px"
             className="object-contain"
-            priority
+            priority // Critical for LCP
           />
-        </div>
+        </motion.div>
         
-        <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-light mt-4 font-sans">
+        {/* Subtitle */}
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          className="text-lg md:text-2xl text-gray-200 mb-12 max-w-2xl mx-auto font-light font-sans tracking-tight"
+          style={{ fontOpticalSizing: "auto" }}
+        >
           One Company for All Your Property Needs
-        </p>
+        </motion.p>
         
-        {/* Botón Outline */}
-        <a href="#contact" className="border-2 border-white text-white px-8 py-3 text-sm md:text-base uppercase tracking-widest font-heading hover:bg-white hover:text-primary transition-colors">
-          Request a Quote
-        </a>
+        {/* Botón */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <a 
+            href="#contact" 
+            className="relative overflow-hidden group inline-flex items-center justify-center border border-white/30 bg-white/5 backdrop-blur-md text-white px-10 py-4 text-xs md:text-sm uppercase tracking-[0.2em] font-heading transition-all duration-500 hover:bg-white hover:text-primary hover:border-white shadow-2xl"
+          >
+            <span className="relative z-10 font-bold">Request a Quote</span>
+          </a>
+        </motion.div>
       </div>
 
-      {/* Indicador de Scroll Down */}
-      <div className="absolute bottom-8 z-20 flex flex-col items-center">
-        <span className="text-white text-xs uppercase tracking-[0.2em] mb-2 opacity-80">Scroll</span>
-        <svg className="w-5 h-5 text-white animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
-      </div>
+      {/* Indicador de Scroll Premium */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5, delay: 0.8 }}
+        className="absolute bottom-12 z-20 flex flex-col items-center pointer-events-none"
+      >
+        <span className="text-white text-[9px] md:text-[10px] uppercase tracking-[0.3em] mb-4 opacity-50 font-bold">Scroll</span>
+        
+        <div className="w-[1px] h-12 bg-white/20 relative overflow-hidden">
+          <motion.div 
+            className="w-full h-1/2 bg-white absolute top-0"
+            animate={{ y: ["-100%", "200%"] }}
+            transition={{ 
+              repeat: Infinity, 
+              duration: 1.5, 
+              ease: [0.65, 0, 0.35, 1] 
+            }}
+          />
+        </div>
+      </motion.div>
     </section>
   );
 }
