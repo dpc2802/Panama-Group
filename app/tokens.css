@@ -1,0 +1,11 @@
+@theme {
+  --color-primary: #082343; /* Navy Blue from the logo background */
+  --color-accent: #b51522; /* Crimson Red from 'GROUP GC' text */
+  --color-background: #ffffff;
+  --color-foreground: #082343; /* Dark Navy for text */
+  --color-muted: #475569; /* Slate 600 for secondary text */
+  --color-border: #e2e8f0;
+  
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+}
