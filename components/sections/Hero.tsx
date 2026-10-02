@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 
 export function Hero() {
   return (
-    <section id="hero" className="relative min-h-[115dvh] w-full flex flex-col items-center justify-center overflow-hidden bg-neutral-900">
+    <section id="hero" className="relative min-h-[100dvh] lg:min-h-0 lg:h-auto lg:aspect-[16/9] w-full flex flex-col items-center justify-center overflow-hidden bg-neutral-900">
       {/* Video Background Optimized */}
       <video 
         autoPlay 
@@ -13,7 +13,7 @@ export function Hero() {
         muted 
         playsInline
         poster="/images/gallery/project-1-cover.jpg"
-        className="absolute inset-0 w-full h-full object-cover z-0 scale-105"
+        className="absolute inset-0 w-full h-full object-cover z-0"
       >
         <source src="/hero-video.mov" type="video/mp4" />
       </video>
