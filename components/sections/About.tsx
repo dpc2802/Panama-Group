@@ -16,7 +16,8 @@ export function About() {
             <Image 
               src="/images/about.jpg" 
               alt="Panama Group GC Team" 
-              fill 
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw" 
               className="object-cover group-hover:scale-105 transition-transform duration-1000"
             />
             {/* Experience Badge */}

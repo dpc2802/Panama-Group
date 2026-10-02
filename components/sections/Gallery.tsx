@@ -160,6 +160,7 @@ export function Gallery() {
                   src={project.coverImage} 
                   alt={project.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover group-hover:scale-110 transition-transform duration-700 z-0"
                   onError={(e) => e.currentTarget.style.display = 'none'}
                 />
@@ -234,6 +235,7 @@ export function Gallery() {
                     src={selectedProject.galleryImages[currentImageIndex]}
                     alt={`${selectedProject.title} media ${currentImageIndex + 1}`}
                     fill
+                    sizes="100vw"
                     className="object-contain"
                     onError={(e) => e.currentTarget.style.display = 'none'}
                   />
