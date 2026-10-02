@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 
 export function Hero() {
   return (
-    <section id="hero" className="relative h-[100dvh] w-full flex flex-col items-center justify-center overflow-hidden bg-neutral-900">
+    <section id="hero" className="relative min-h-[115dvh] w-full flex flex-col items-center justify-center overflow-hidden bg-neutral-900">
       {/* Video Background Optimized */}
       <video 
         autoPlay 
