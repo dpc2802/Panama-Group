@@ -30,6 +30,8 @@ export function Gallery() {
 
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [showAll, setShowAll] = useState(false);
+  const displayedProjects = showAll ? projects : projects.slice(0, 6);
 
   const openLightbox = (project: Project) => {
     setSelectedProject(project);
@@ -82,7 +84,7 @@ export function Gallery() {
 
         {/* Gallery Grid (Cover Images) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {projects.map((project) => (
+          {displayedProjects.map((project) => (
             <div 
               key={project.id} 
               onClick={() => openLightbox(project)}
@@ -124,6 +126,17 @@ export function Gallery() {
           ))}
         </div>
 
+        {/* View More Button */}
+        {!showAll && projects.length > 6 && (
+          <div className="mt-12 flex justify-center">
+            <button 
+              onClick={() => setShowAll(true)}
+              className="border-2 border-primary text-primary px-8 py-3 text-sm font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-colors duration-300"
+            >
+              View More Projects
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Lightbox / Modal */}
