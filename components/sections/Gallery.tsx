@@ -97,7 +97,7 @@ export function Gallery() {
 
               {/* Cover Video */}
               <video 
-                src={project.coverImage}
+                src={`${project.coverImage}#t=0.001`}
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 z-0"
                 muted
                 loop
