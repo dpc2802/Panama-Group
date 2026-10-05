@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Maximize2, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Maximize2, X, ChevronLeft, ChevronRight, Play } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 type Project = {
@@ -107,10 +107,17 @@ export function Gallery() {
                 onMouseLeave={(e) => handleVideoHover(e, false)}
               />
 
+              {/* Permanent Play Icon Indicator */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+                <div className="bg-black/40 backdrop-blur-sm p-4 rounded-full text-white shadow-lg border border-white/20 group-hover:scale-110 transition-transform duration-300">
+                  <Play size={32} fill="currentColor" strokeWidth={1} className="ml-1" />
+                </div>
+              </div>
+
               {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-primary/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex flex-col items-center justify-center backdrop-blur-[2px]">
+              <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 flex flex-col items-center justify-center backdrop-blur-[2px]">
                 <div className="bg-white p-3 rounded-full text-primary transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <Maximize2 size={24} strokeWidth={2.5} />
+                  <Play size={24} fill="currentColor" className="ml-1" />
                 </div>
                 <span className="text-white font-bold uppercase tracking-widest mt-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
                   Play Video
