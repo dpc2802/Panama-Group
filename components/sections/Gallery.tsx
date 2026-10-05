@@ -159,7 +159,7 @@ export function Gallery() {
 
             {/* Content Container */}
             <div 
-              className="relative w-full max-w-5xl aspect-video md:aspect-[16/9] flex items-center justify-center"
+              className="relative w-full h-[75vh] md:h-[85vh] max-w-5xl flex items-center justify-center mt-[-5vh]"
               onClick={(e) => e.stopPropagation()}
             >
               <motion.div 
